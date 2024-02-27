@@ -1,0 +1,90 @@
+@import url(https://fonts.googleapis.com/css?family=Lusitana:400,700);
+
+:root {
+    --canvasColor: rgb(42, 49, 59);
+    --foregroundColor: #e3f2fd;
+}
+
+body {
+    font-family: Lusitana, 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: var(--canvasColor);
+}
+
+a {
+    text-decoration: none;
+    color: var(--foregroundColor)
+}
+
+a:hover {
+    color: #fca112;
+}
+
+.bar {
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: inline-flex;
+    background-color: #333;
+    height: 60px;
+    justify-content: space-around;
+}
+
+li {
+    color: var(--foregroundColor);
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+}
+
+li h1 {
+    color: #fca112;
+}
+
+.bar {
+    position: relative; /* Assicura che i figli posizionati in modo assoluto si basino su questo elemento */
+}
+
+.logo_box {
+    position: absolute;
+    top: 10px; /* Puoi regolare questa posizione in base alle tue esigenze */
+    left: 10px; /* Puoi regolare questa posizione in base alle tue esigenze */
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 30px; /* Puoi regolare questa dimensione in base alle tue esigenze */
+    height: auto;
+    margin-right: 10px; /* Aggiunge spazio a destra del logo */
+}
+
+h1 {
+    margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .bar {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .logo_box {
+        display: flex;
+        align-items: center;
+        position: static;
+    }
+
+    li {
+        padding: 10px; /* Regola il padding per schermi più piccoli */
+    }
+    .container {
+        width: 80%;
+        height: 200px;
+    }
+}
+

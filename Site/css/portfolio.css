@@ -1,0 +1,352 @@
+:root {
+    --canvasColor: rgb(42, 49, 59);
+    --foregroundColor: #e3f2fd;
+    --secondarybutton: #323da5;
+    --secondarybuttonhidden: #c7cae6;
+    --secondaryColor: #fca112;
+    --backgroundInsert: #d1a322;
+    --accentColor: #FFC729;
+    --accentShade4: #ffe08a;
+}
+
+section {
+    align-items: center;
+    position: relative;
+}
+
+.article-1 {
+    display: flex;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-left: auto;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buy_sell {
+    background-color: var(--accentColor);
+    width: 575px;
+    height: 75px;
+    display: flex;
+    column-gap: 15px;
+    color: var(--foregroundColor);
+    align-items: center;
+    justify-content: space-around;
+}
+
+.active_button,
+.hidden_button {
+    width: 170px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+}
+
+.active_button:hover,
+.hidden_button:hover {
+    background-color: var(--accentShade4);
+    color: var(--canvasColor);
+}
+
+.hidden_button {
+    background-color: var(--secondarybuttonhidden);
+    color: var(--canvasColor);
+}
+
+.active_button {
+    background-color: var(--canvasColor);
+    color: var(--foregroundColor);
+}
+
+.cell-1 {
+    display: flex;
+    width: 560px;
+    padding-left: 15px;
+    color: var(--foregroundColor);
+    position: relative;
+}
+
+.cell-1 > :last-child {
+    display: flex;
+    padding-left: 27px;
+}
+
+.cell-1 > :nth-child(2) {
+    margin-left: 270px;
+}
+
+.explan {
+    display: flex;
+    align-items: center;
+}
+
+.explan img {
+    margin-right: 10px;
+    margin-left: 320px;
+    height: 30px;
+    width: 30px;
+}
+
+.explan :first-child {
+    color: var(--canvasColor);
+}
+
+.valid {
+    background-color: var(--canvasColor);
+    color: var(--foregroundColor);
+    border: none;
+    width: 560px;
+    height: 45px;
+    border-radius: 5px;
+}
+
+.valid:hover {
+    background-color: var(--accentShade4);
+    color: var(--canvasColor);
+}
+
+.article-1 :nth-child(12) {
+    width: 560px;
+    color: var(--foregroundColor);
+}
+
+.balance {
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 350px;
+    height: 30px;
+    background-color: var(--accentColor);
+    border-radius: 5px;
+}
+
+.balance p {
+    text-align: center;
+    font-size: larger;
+}
+
+.input-text {
+    background-color: var(--backgroundInsert);
+    display: block;
+    width: 96%;
+    height: 36px;
+    border-width: 0 0 2px 0;
+    border-color: var(--backgroundInsert);
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 400;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:focus,
+    &.not-empty {
+        + .label {
+            transform: translateY(-24px);
+        }
+    }
+}
+
+.label {
+    position: absolute;
+    left: -280px;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 400;
+    color: #8f8f8f;
+    cursor: text;
+    transition: transform .2s ease-in-out;
+}
+
+.hidden {
+    display: none;
+}
+
+.active {
+    display: flex;
+    background-color: var(--accentColor);
+    flex-direction: column;
+    align-items: center;
+}
+
+.active p {
+    margin-bottom: 20px;
+}
+
+.up_input {
+    margin-bottom: 20px;
+    margin-left: -500px;
+    color: var(--canvasColor);
+}
+
+.up_input_sell_up,
+.up_input_sell_down {
+    margin-bottom: 20px;
+    margin-left: -500px;
+    color: var(--canvasColor);
+}
+
+
+.up_input_send_down {
+    margin-bottom: 20px;
+    margin-left: -525px;
+    color: var(--canvasColor);
+}
+
+.up_input_send_up {
+    margin-bottom: 20px;
+    margin-left: -455px;
+    color: var(--canvasColor);
+}
+
+#slidingImg,
+#slidingImgSell {
+    margin-top: 30px;
+    width: 250%;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--canvasColor);
+}
+
+.slidingBeer {
+    max-width: 100%;
+    width: 25%;
+    max-height: 100%;
+    height: auto;
+    position: absolute;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: transform 1s linear, opacity 1s linear;
+}
+
+.slidingBeer-show {
+    transform: translateX(150%);
+    opacity: 1;
+}
+
+.slidingEth {
+    max-width: 100%;
+    width: 25%;
+    max-height: 100%;
+    height: auto;
+    position: absolute;
+    transform: translateX(150%);
+    opacity: 0;
+    transition: transform 1.5s linear, opacity 800ms linear;
+}
+
+.slidingEth-show {
+    transform: translateX(-100%);
+    opacity: 1;
+}
+
+.Cost {
+    color: var(--canvasColor);
+}
+
+#balance {
+    color: var(--canvasColor);
+}
+
+/* Media query per dispositivi più piccoli */
+@media only screen and (max-width: 768px) {
+    .cell-1,
+    .explan,
+    .valid,
+    .article-1 :nth-child(12),
+    .balance,
+    #slidingImg,
+    #slidingImgSell {
+        width: 100%;
+        max-width: none;
+    }
+
+    .explan {
+        margin-left: 30px;
+    }
+
+    #slidingImg,
+    #slidingImgSell {
+        height: 100px
+    }
+
+    .input-text,
+    .label,
+    .up_input,
+    .up_input_send_down,
+    .up_input_send_up,
+    .up_input_sell_down,
+    .up_input_sell_up {
+        width: 90%;
+        margin-left: 10px;
+        max-width: none;
+    }
+
+    .cell-1 {
+        padding-left: 0;
+    }
+
+    .explan img {
+        margin-left: 10px;
+    }
+
+    .up_input,
+    .up_input_send_down,
+    .up_input_send_up,
+    .up_input_sell_down,
+    .up_input_sell_up {
+        margin-left: 0;
+    }
+
+    .valid,
+    .article-1 :nth-child(12),
+    .balance p,
+    .input-text,
+    .label,
+    .up_input,
+    .up_input_send_down,
+    .up_input_send_up,
+    .up_input_sell_down,
+    .up_input_sell_up,
+    .Cost,
+    #balance,
+    #submit_sell,
+    .active p {
+        font-size: 18px;
+    }
+
+    .article-1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-right: auto;
+        margin-top: 50px;
+        margin-left: auto;
+    }
+
+    #Buy_element,
+    #Sell_element,
+    #Send_element,
+    .buy_sell,
+    .balance {
+        width: 85%;
+        box-sizing: border-box;
+    }
+
+    .active_button,
+    .hidden_button {
+        width: 25%;
+        max-width: none;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .active_button:hover,
+    .hidden_button:hover {
+        background-color: var(--accentShade4);
+        color: var(--canvasColor);
+    }
+}
+
